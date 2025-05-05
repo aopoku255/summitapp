@@ -1,3 +1,4 @@
+import 'package:cbfapp/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class HeaderText extends StatelessWidget {
@@ -6,6 +7,6 @@ class HeaderText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),);
+    return Text(text, style: TextStyle(color: AppColors.primaryRed, fontSize: 28, fontWeight: FontWeight.bold),);
   }
 }

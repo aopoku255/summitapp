@@ -19,7 +19,7 @@ class SessionCard extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: 350,
       decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.06),
+          color: Colors.black.withOpacity(0.09),
           borderRadius: const BorderRadius.all(Radius.circular(20))
       ),
       child: Column(

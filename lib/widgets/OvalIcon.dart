@@ -12,7 +12,7 @@ class OvalIcon extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10), // Adds blur effect
         child: Container(
-          color: Colors.white.withOpacity(0.3), // Semi-transparent white background
+          color: Colors.black.withOpacity(0.3), // Semi-transparent white background
           child: IconButton(
             icon: Icon(icon, color: Colors.white), // Leading icon
             onPressed: () {

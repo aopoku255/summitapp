@@ -31,7 +31,7 @@ class _ExpandableTextState extends State<ExpandableText> {
           children: [
             RichText(
               text: TextSpan(
-                text: _isExpanded ? widget.text : widget.text.substring(0, widget.text.length > 100 ? 100 : widget.text.length) + (isOverflowing ? '...' : ''),
+                text: _isExpanded ? widget.text : widget.text.substring(0, widget.text.length > 50 ? 50 : widget.text.length) + (isOverflowing ? '...' : ''),
                 style: const TextStyle(fontSize: 16, color: Colors.white),
                 children: isOverflowing
                     ? [

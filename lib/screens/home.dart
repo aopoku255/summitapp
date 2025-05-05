@@ -40,11 +40,12 @@ class _HomeState extends State<Home> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xFFC052DF), // First color
-              Color(0xFF23236C), // Second color
+              Colors.grey.withOpacity(0.75), // First color
+              Colors.grey.withOpacity(0.5) // First color
+              // AppColors.primaryRed, // Second color
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -81,7 +82,7 @@ class _HomeState extends State<Home> {
                                 width: 120,
                                 height: 34,
                                 decoration: BoxDecoration(color: index == _selectedChipIndex ? Colors.white : Colors.white.withOpacity(0.1), borderRadius: BorderRadius.circular(50)),
-                                child: Center(child: MainText(text:_chipLabels[index], color: index == _selectedChipIndex ? Colors.purple : Colors.white, fontWeight: FontWeight.bold,)),
+                                child: Center(child: MainText(text:_chipLabels[index], color: index == _selectedChipIndex ? Colors.black : Colors.black.withOpacity(0.8), fontWeight: FontWeight.bold,)),
                               ),
                             ),
                           );
