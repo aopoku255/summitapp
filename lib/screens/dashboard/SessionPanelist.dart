@@ -137,7 +137,7 @@ class _SessionPanelistState extends State<SessionPanelist> {
                 });
               },
               decoration: InputDecoration(
-                hintText: "Search keynote speakers...",
+                hintText: "Search panelist speakers...",
                 prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(50), borderSide: BorderSide.none),
               ),

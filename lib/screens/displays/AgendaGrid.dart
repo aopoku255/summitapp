@@ -1,3 +1,5 @@
+import 'package:cbfapp/widgets/ExpandedText.dart';
+import 'package:cbfapp/widgets/MainText.dart';
 import 'package:flutter/material.dart';
 
 class AgendaGrid extends StatefulWidget {

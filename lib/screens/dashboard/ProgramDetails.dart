@@ -18,12 +18,16 @@ class _ProgramDetailsState extends State<ProgramDetails> {
         title: MainText(text: session['format'] ?? ""),
         centerTitle: true,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-         Text(session["title"] ?? ""),
-         Text("Hello"),
-        ],
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+           MainText(text: session["title"] ?? "", fontSize: 24, fontWeight: FontWeight.bold,),
+           MainText(text: session["description"] ?? ""),
+
+          ],
+        ),
       ),
     );
   }

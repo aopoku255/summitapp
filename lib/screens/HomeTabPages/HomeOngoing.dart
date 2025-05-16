@@ -69,6 +69,7 @@ class _HomeOngoingState extends State<HomeOngoing> {
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
+
           children: List.generate(_ongoingSession.length, (index) {
             final session = _ongoingSession[index];
 
@@ -88,7 +89,7 @@ class _HomeOngoingState extends State<HomeOngoing> {
                     opacity: 0.7,
                     repeat: ImageRepeat.repeatY,
                   ),
-                  color: AppColors.primaryColor,
+                  color: AppColors.primaryGold.withOpacity(0.8),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Column(

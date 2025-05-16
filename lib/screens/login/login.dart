@@ -16,11 +16,21 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primaryBackground,
+      appBar: AppBar(
+        toolbarHeight: 50,
+        automaticallyImplyLeading: false,
+        flexibleSpace: Container(
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage("assets/images/gold.png"), fit: BoxFit.cover)
+          ),
+        ),
+      ),
       bottomSheet: Container(
         height: 50,
-        color: Colors.white,
-        child: MainText(text: "CARISCA SUMMIT 2025", color: AppColors.primaryGray,),
-
+        decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage("assets/images/dilogo.png"))
+        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -31,8 +41,8 @@ class _LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 200,
-                  decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/banner.png"), fit: BoxFit.cover)),
+                  height: 100,
+                  decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/africa.png"), alignment: Alignment.topRight)),
                 ),
                 SizedBox(height: 20,),
                 MainText(text: "Welcome Back!", fontWeight: FontWeight.bold, fontSize: 28, color: AppColors.primaryGray,),
@@ -65,7 +75,7 @@ class _LoginState extends State<Login> {
                           obscureText: true,
                         ),
                         Center(
-                          child: Button(label: "Sign in", onTap: (){
+                          child: Button(label: "Sign in", backgroundColor: AppColors.primaryColor, onTap: (){
                             Navigator.pushNamed(context, "/dashboard");
                           },),
                         )

@@ -1,9 +1,12 @@
+import 'package:cbfapp/screens/dashboard/Agenda/Day2.dart';
+import 'package:cbfapp/screens/dashboard/Agenda/Day3.dart';
 import 'package:cbfapp/screens/displays/AgendaGrid.dart';
 import 'package:cbfapp/screens/displays/AgendaList.dart';
 import 'package:cbfapp/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/MainText.dart';
+import 'Agenda/Day1.dart';
 
 class DashboardAgenda extends StatefulWidget {
   const DashboardAgenda({super.key});
@@ -13,85 +16,48 @@ class DashboardAgenda extends StatefulWidget {
 }
 
 class _DashboardAgendaState extends State<DashboardAgenda> {
-  int selectedIndex = 0;
 
-  final List<IconData> tabs = [Icons.grid_view, Icons.list_rounded];
-  final tabPages = [AgendaGrid(), AgendaList()];
+  final _tabs = [Day1(), Day1(), Day1()];
+
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.primaryBackground,
-      appBar: AppBar(
-        leading: InkWell(
-          onTap: () {
-            Navigator.pushNamed(context, "/profile");
-          },
-          child: Container(
-            margin: const EdgeInsets.only(left: 10),
-            child: CircleAvatar(
-              child: MainText(
-                text: "A",
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        backgroundColor: AppColors.primaryBackground,
+        appBar: AppBar(
+          leading: InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, "/profile");
+            },
+            child: Container(
+              margin: const EdgeInsets.only(left: 10),
+              child: CircleAvatar(
+                child: MainText(
+                  text: "A",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                ),
+                backgroundColor: AppColors.primaryColor.withOpacity(0.4),
               ),
-              backgroundColor: AppColors.primaryColor.withOpacity(0.4),
             ),
           ),
-        ),
-        title: MainText(
-          text: "Agenda",
-        ),
-        centerTitle: true,
-      ),
-      body: SafeArea(
-        child: Container(
-          decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/background.png"), alignment: Alignment.bottomLeft)),
-
-          margin: EdgeInsets.only(top: 20),
-          // decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/background.png"), alignment: Alignment.bottomCenter)),
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            children: [
-              // const SizedBox(height: 20),
-              Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(),
-                  Row(
-                    children: List.generate(tabs.length, (index) {
-                      final bool isSelected = selectedIndex == index;
-                      return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedIndex = index;
-                          });
-                        },
-                        child: Row(
-                          children: [
-                            // isSelected ? Icon(Icons.check, color: AppColors.primaryColor,) : MainText(text: ""),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                                decoration: BoxDecoration(
-                                    color: isSelected
-                                        ? AppColors.primaryColor.withOpacity(0.2)
-                                        : Colors.transparent,
-                                    borderRadius: BorderRadius.circular(5)),
-                                padding: EdgeInsets.all(8),
-                                child: Icon(tabs[index]))
-                          ],
-                        ),
-                      );
-                    }),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-
-            ],
+          title: MainText(
+            text: "Agenda",
           ),
+          centerTitle: true,
+          bottom: TabBar(tabs: [
+            Tab(text: "DAY 1",),
+            Tab(text: "DAY 2",),
+            Tab(text: "DAY 3",)
+          ],),
         ),
+        body: TabBarView(children: [
+          Day1(),
+          Day2(),
+          Day3(),
+        ],)
       ),
     );
   }

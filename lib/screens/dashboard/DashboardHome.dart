@@ -61,11 +61,11 @@ class _DashboardHomeState extends State<DashboardHome> {
             child: Column(
               children: [
                 Container(
-                  height: 200,
+                  height: 250,
                   width: double.infinity,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("assets/images/banner.png"),
+                      image: AssetImage("assets/images/homebanner.png"),
                       fit: BoxFit.cover,
                     ),
                   ),
